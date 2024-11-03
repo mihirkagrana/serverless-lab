@@ -281,6 +281,21 @@ In this step, you deploy the API that you created to a stage called prod.
 ```
 ![List Dynamo Items](./images/dynamo-item-list.jpg)
 
+5. To delete an item from the table, we can use the "delete" operation of Lambda using the same API. Pass the following JSON to the API, and it will delete the item from the Dynamo table
+
+```json
+{
+    "operation": "delete",
+    "tableName": "lambda-apigateway",
+    "payload": {
+       "Key": {
+            "id": "1234EFGH"
+        }
+    }
+}
+```
+![List Dynamo Items](./images/dynamo-item-delete.jpg)
+
 We have successfully created a serverless API using API Gateway, Lambda, and DynamoDB!
 
 ## Cleanup
